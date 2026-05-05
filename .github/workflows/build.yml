@@ -37,7 +37,7 @@ permissions:
 jobs:
   linux_nix:
     if: ${{ !inputs.skip-nix-build }}
-    uses: SpiralP/github-reusable-workflows/.github/workflows/build.yml@45d06d9ac7c97686aba508b20a0e72d7b8aee6d0 # main
+    uses: SpiralP/github-reusable-workflows/.github/workflows/build.yml@338cc4a77d16b2a36bbdab9f0d19f2d3e8cf183f # main
     with:
       flake-attribute: ${{ inputs.release && 'default' || 'debug' }}
       upload-build-result: ${{ !inputs.skip-artifact-upload }}
