@@ -32,7 +32,10 @@ fn with_components<R, F: FnOnce(&mut Vec<Inner>) -> R>(f: F) -> R {
 
 extern "C" fn init() {
     with_components(|components| {
-        for component in components {
+        if components.is_empty() {
+            *components = init_components().into_iter().map(RefCell::new).collect();
+        }
+        for component in components.iter() {
             let mut component = component.borrow_mut();
             debug!("init {}", component.name());
             component.init();
