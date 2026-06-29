@@ -95,7 +95,7 @@ dependencies = [
 
 [[package]]
 name = "classicube-held-block-info-plugin"
-version = "1.0.2"
+version = "1.0.3"
 dependencies = [
  "anyhow",
  "classicube-helpers",
